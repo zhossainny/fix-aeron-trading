@@ -52,4 +52,14 @@ FIX Acceptor (exchange) processes the message and responds with an Execution Rep
 
 FIX Initiator (receiver) receives the Execution Report and processes it accordingly.
 
+AND
+Message protocols
+Aeron → FIX Initiator = IPC
 
+FIX Initiator ↔ FIX Acceptor = TCP
+
+FIX Acceptor → Aeron = IPC
+
+Note: Aeron IPC (Inter-Process Communication) is a high-performance transport 
+mode in the Aeron messaging system that allows processes on the same machine 
+to communicate via shared memory, not via sockets.
